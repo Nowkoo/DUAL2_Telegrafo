@@ -29,13 +29,13 @@ public class Main {
         Repetidor repetidor = new Repetidor(true);
         Repetidor repetidorConBateria = new RepetidorConBateria(3, true);
         Receptor receptor = new Receptor(codificador);
-        Emisor emisor2 = new Emisor(mensaje, codificador, true);
+//        Emisor emisor2 = new Emisor(mensaje, codificador, true);
 
 
         ArrayList<Componente> componentes = new ArrayList<>();
         componentes.add(emisor);
         componentes.add(cable);
-        componentes.add(emisor2);
+//        componentes.add(emisor2);
         componentes.add(repetidor);
         componentes.add(repetidorConBateria);
         componentes.add(receptor);
