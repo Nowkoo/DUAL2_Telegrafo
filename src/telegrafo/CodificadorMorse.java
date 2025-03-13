@@ -1,3 +1,5 @@
+package telegrafo;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +42,7 @@ public class CodificadorMorse {
             mensajeCodificado += equivalente;
             mensajeCodificado += divisorCaracteres;
         }
+        System.out.println("LOG: mensaje codificado: " + mensajeCodificado);
         return mensajeCodificado;
     }
 
@@ -52,6 +55,7 @@ public class CodificadorMorse {
             mensajeDecodificado += equivalente;
         }
 
+        System.out.println("LOG: mensaje decodificado: " + mensajeDecodificado);
         return mensajeDecodificado;
     }
 }

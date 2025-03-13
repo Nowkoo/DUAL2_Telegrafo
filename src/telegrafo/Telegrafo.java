@@ -1,20 +1,28 @@
+package telegrafo;
+
+import telegrafo.componentes.Emisor;
+
 import java.util.ArrayList;
 
 public class Telegrafo {
-    private ArrayList<Componente> componentes;
+    private final ArrayList<Componente> componentes;
 
     public Telegrafo(ArrayList<Componente> componentes) {
         this.componentes = componentes;
     }
 
-    public void run() {
+    public void run() throws Exception {
         conectarComponentes();
 
+        Emisor emisor;
         try {
-            Emisor emisor = (Emisor) componentes.getFirst();
-            emisor.send_signal();
+            emisor = (Emisor) componentes.getFirst();
         } catch (Exception e) {
-            System.out.println("Se necesita un emisor de primer componente");
+            throw new Exception("Se necesita un emisor de primer componente");
+        }
+
+        if (emisor != null) {
+            emisor.sendSignal();
         }
     }
 

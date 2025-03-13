@@ -1,9 +1,13 @@
+package telegrafo;
+
+import java.util.ArrayList;
+
 public abstract class Componente {
     private Componente componenteSiguiente;
 
     public void transmitir(Senyal senyal) throws Exception {
         if (componenteSiguiente == null) {
-            System.out.println("No hay componente al que transmitir la señal");
+            throw new Exception("No existe componente al que transmitir la señal\"");
         } else {
             try {
                 componenteSiguiente.transmitir(senyal);

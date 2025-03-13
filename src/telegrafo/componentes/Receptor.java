@@ -1,13 +1,19 @@
+package telegrafo.componentes;
+
+import telegrafo.CodificadorMorse;
+import telegrafo.Componente;
+import telegrafo.Senyal;
+
 public class Receptor extends Componente {
     private String mensajeRecibido;
-    private CodificadorMorse codificador;
+    private final CodificadorMorse codificador;
 
     public Receptor(CodificadorMorse codificador) {
         mensajeRecibido = "";
         this.codificador = codificador;
     }
 
-    public void receive_signal(Senyal senyal) {
+    public void receiveSignal(Senyal senyal) {
         String mensajeEnPulsos = senyal.getMensajeEnPulsos();
         mensajeRecibido = codificador.decodificar(mensajeEnPulsos);
         display_message();
@@ -19,7 +25,7 @@ public class Receptor extends Componente {
 
     @Override
     public void transmitir(Senyal senyal) {
-        System.out.println("LOG: Receptor - señal: " + senyal.getPotenciaActual());
-        receive_signal(senyal);
+        System.out.println("LOG: modelo.Receptor - señal: " + senyal.getPotenciaActual());
+        receiveSignal(senyal);
     }
 }

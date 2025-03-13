@@ -1,7 +1,9 @@
+package telegrafo;
+
 public class Senyal {
-    private double maximaPotencia = 10f;
+    private final double maximaPotencia = 10f;
     private double potenciaActual;
-    private String mensajeEnPulsos;
+    private final String mensajeEnPulsos;
 
     public Senyal(String mensajeEnPulsos) {
         potenciaActual = maximaPotencia;
@@ -25,5 +27,9 @@ public class Senyal {
 
     public double getPotenciaActual() {
         return potenciaActual;
+    }
+
+    public double getMaximaPotencia() {
+        return maximaPotencia;
     }
 }
