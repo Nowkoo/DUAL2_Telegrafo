@@ -1,7 +1,5 @@
 package telegrafo;
 
-import java.util.ArrayList;
-
 public abstract class Componente {
     private Componente componenteSiguiente;
 
@@ -19,5 +17,9 @@ public abstract class Componente {
 
     public void conectar(Componente componente) {
         componenteSiguiente = componente;
+    }
+
+    public Componente getComponenteSiguiente() {
+        return componenteSiguiente;
     }
 }

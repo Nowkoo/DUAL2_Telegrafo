@@ -38,7 +38,7 @@ public class Cable extends Componente {
         calcularPerdidaDeSenyalAleatoria(senyal);
         aplicarDegradacionSenyal(senyal);
 
-        System.out.println("LOG: modelo.Cable - señal: " + senyal.getPotenciaActual());
+        System.out.println("LOG: Cable - señal: " + senyal.getPotenciaActual());
         super.transmitir(senyal);
     }
 }

@@ -19,12 +19,11 @@ public class Emisor extends Componente {
         interruptor.verificarEncendido();
         String mensajeCodificado = codificador.codificar(mensaje);
         Senyal senyal = new Senyal(mensajeCodificado);
-        transmitir(senyal);
+        super.getComponenteSiguiente().transmitir(senyal);
     }
 
     @Override
     public void transmitir(Senyal senyal) throws Exception {
-        System.out.println("LOG: modelo.Emisor - señal: " + senyal.getPotenciaActual());
-        super.transmitir(senyal);
+        throw new Exception("El emisor no puede transmitir la señal");
     }
 }

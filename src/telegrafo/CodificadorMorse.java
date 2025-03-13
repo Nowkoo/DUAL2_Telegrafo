@@ -35,27 +35,27 @@ public class CodificadorMorse {
     private static final String divisorCaracteres = "/";
 
     public String codificar(String mensaje) {
-        String mensajeCodificado = "";
+        StringBuilder mensajeCodificado = new StringBuilder();
 
         for (char caracter : mensaje.toLowerCase().toCharArray()) {
             String equivalente = EN_TO_MORSE.get(String.valueOf(caracter));
-            mensajeCodificado += equivalente;
-            mensajeCodificado += divisorCaracteres;
+            mensajeCodificado.append(equivalente);
+            mensajeCodificado.append(divisorCaracteres);
         }
         System.out.println("LOG: mensaje codificado: " + mensajeCodificado);
-        return mensajeCodificado;
+        return mensajeCodificado.toString();
     }
 
     public String decodificar(String mensajeCodificado) {
-        String mensajeDecodificado = "";
+        StringBuilder mensajeDecodificado = new StringBuilder();
 
         String[] caracteres = mensajeCodificado.split(divisorCaracteres);
         for (String caracter : caracteres) {
             String equivalente = MORSE_TO_EN.get(caracter);
-            mensajeDecodificado += equivalente;
+            mensajeDecodificado.append(equivalente);
         }
 
         System.out.println("LOG: mensaje decodificado: " + mensajeDecodificado);
-        return mensajeDecodificado;
+        return mensajeDecodificado.toString();
     }
 }
